@@ -45,3 +45,10 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Deploy an Astro site
+- [Adding an Adapter](https://docs.astro.build/ja/guides/integrations-guide/cloudflare/)
+- [See official docs.](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/)
+```bash
+npx astro add cloudflare
+```
