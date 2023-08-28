@@ -16,11 +16,30 @@ Inside of your Astro project, you'll see the following folders and files:
 
 ```
 /
-├── public/
-├── src/
-│   └── pages/
+├── astro.config.mjs
+├── package.json
+├── package-lock.json
+├── public
+│   ├── astro.svg
+│   └── favicon.svg
+├── README.md
+├── src
+│   ├── components
+│   │   ├── Articles.astro
+│   │   ├── Certificates.astro
+│   │   ├── Experience.astro
+│   │   ├── Footer.astro
+│   │   └── Intro.astro
+│   ├── env.d.ts
+│   ├── layouts
+│   │   └── Layout.astro
+│   ├── lib
+│   │   ├── getArticles.ts
+│   │   ├── getCertificates.ts
+│   │   └── getExperience.ts
+│   └── pages
 │       └── index.astro
-└── package.json
+└── tsconfig.json
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
@@ -46,7 +65,7 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-## Deploy an Astro site
+## ☁️ Deploy an Astro site
 - [Adding an Adapter](https://docs.astro.build/ja/guides/integrations-guide/cloudflare/)
 - [See official docs.](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/)
 ```bash
