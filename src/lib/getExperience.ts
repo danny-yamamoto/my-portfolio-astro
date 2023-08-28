@@ -5,6 +5,7 @@ type ExperienceItem = {
 }
 
 export const getExperience = () => {
+    // todo: Create an API.
     const res: ExperienceItem[] = [
         {
             id: '2022-09',
