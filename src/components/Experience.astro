@@ -1,0 +1,33 @@
+---
+import { getExperience } from "../lib/getExperience"
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+
+const experience = getExperience();
+---
+
+<section>
+    <h2>{title}</h2>
+    <ul>
+        {experience.map(({ id, company, position }) => (
+            <li id={id}>{id}: {position} @ {company}</li>
+        ))}
+    </ul>
+</section>
+<style>
+    section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    h1, h2 {
+        margin: 0 0 20px;
+        border-bottom: 2px solid #333;
+    }
+</style>

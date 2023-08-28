@@ -1,0 +1,33 @@
+---
+import { getCertificates } from "../lib/getCertificates"
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+
+const certificates = getCertificates();
+---
+
+<section id="intro">
+    <h2>{title}</h2>
+    <ul>
+        {certificates.map(({ blockchainId, title }) => (
+            <li id={blockchainId}>{title}</li>
+        ))}
+    </ul>
+</section>
+<style>
+    section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    h1, h2 {
+        margin: 0 0 20px;
+        border-bottom: 2px solid #333;
+    }
+</style>

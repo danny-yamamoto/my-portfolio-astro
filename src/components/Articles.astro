@@ -1,0 +1,55 @@
+---
+import { getArticles } from "../lib/getArticles"
+
+interface Props {
+	count: number;
+}
+
+const { count } = Astro.props;
+
+const articles = await getArticles(count);
+---
+
+<section id="articles">
+	<h2>Top {count} Article</h2>
+	<ul>
+		{articles.map(({ id, title, url }) => (
+			<li id={id}>
+				<a href={url} target="_blank">{title}</a>
+			</li>
+		))}
+	</ul>
+</section>
+<style>
+    section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #articles {
+        background-color: #ddd;
+    }
+    #articles h2 {
+        text-align: center;
+    }
+    h1, h2 {
+        margin: 0 0 20px;
+        border-bottom: 2px solid #333;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    ul li {
+        margin-bottom: 0px;
+    }
+	a {
+		color: #0077cc;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+</style>
