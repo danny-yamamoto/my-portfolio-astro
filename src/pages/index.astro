@@ -1,15 +1,29 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Intro from '../components/Intro.astro'
+import Experience from '../components/Experience.astro'
+import Articles from '../components/Articles.astro';
+import Certificates from '../components/Certificates.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Welcome to Astro.">
+	<main>
+		<div>
+			<Intro title='Daisuke Yamamoto' />
+			<Experience title='Experience' />
+			<Articles count={20} />
+			<Certificates title='Certificates' />
+			<Footer title='Daisuke Yamamoto' />
+		</div>
+	</main>
+</Layout>
+
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: Arial, sans-serif;
+		line-height: 1.6;
+	}
+</style>
